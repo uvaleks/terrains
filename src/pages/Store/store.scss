@@ -1,0 +1,32 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+.nft_store_container {
+    text-align: center;
+}
+
+.store-section {
+    padding-top: 70px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.section-title
+{
+    width: 100%;
+    max-width: 1024px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    text-align: center;
+    color: themed(gray-text, $theme);
+    font-size: 9vw;
+    font-weight: 200;
+    font-kerning: normal;
+    -webkit-font-kerning: normal;
+    letter-spacing: -0.04em;
+}
+
+}}

@@ -1,0 +1,69 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+.AboutFeature--wrapper {
+    color: themed(text, $theme);
+    z-index: 10;
+    float: none;
+    border: none;
+    transition: all, 0.15s ease-out;
+    display: inline-block;
+    line-height: 1.5;
+    width: 33%;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.AboutFeature--image--wrapper {
+    height: 100px;
+    width: 100px;
+    margin: 0  auto;
+}
+
+.AboutFeature--image {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.AboutFeature--title {
+    font-size: x-large;
+    position: relative;
+    color: themed(text, $theme);
+    font-weight: 400;
+    line-height: 1.25;
+    
+}
+
+.AboutFeature--title--wrapper {
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 20px auto 12px;
+}
+
+.AboutFeature--description {
+    font-size: medium;
+    position: relative;
+    color: rgb(142, 142, 147);
+    display: block;
+    text-align: center;
+}
+
+@media (max-width: 1023px) {
+.AboutFeature--wrapper {
+    width: 50%;
+}
+}
+
+@media (max-width: 767px) {
+    .AboutFeature--wrapper {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+}}

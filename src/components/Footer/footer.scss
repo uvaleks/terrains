@@ -1,0 +1,15 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+    .copyright {
+        line-height: 1.5;
+        display: block;
+        font-size: medium;
+        color: themed(dark-gray-text, $theme);
+    }
+}}
+    
+footer {
+    text-align: center;
+}

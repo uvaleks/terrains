@@ -1,0 +1,76 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+.action_buy {
+    background-repeat: no-repeat;
+    background-color: themed(blue, $theme);
+    background-size: 12px;
+    background-position: 17px center;
+    padding-left: 34px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color, 0.15s ease-out;
+    background-image: url('eth-icon-white.png');
+    z-index: 5;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.action_buy:hover {
+    background-position: 19px center;
+    padding-left: 36px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 18px;
+    background-color: themed(blue-button-hover, $theme);
+    transition: background-color, 0.15s ease-out;
+    cursor: pointer;
+}
+
+.hint_nft_action_button:hover {
+    margin: 0px auto;
+    transition: margin, 0.1s ease-in;
+}
+
+.action_offer {
+    background-color: themed(blue, $theme);
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: background-color, 0.15s ease-out;
+    background-image: none;
+    z-index: 5;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.action_offer:hover {
+    padding: 10px 18px;
+    background-color: themed(blue-button-hover, $theme);
+    transition: all, 0.1s ease-in;
+    cursor: pointer;
+    background-image: none;
+}
+
+.hint_nft_action_button {
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    display: block;
+    text-align: center;
+    margin: 2px auto;
+    color: #fff;
+    font-size: 14px;
+	font-weight: 400;
+    cursor: pointer;
+    z-index: 5;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    position: relative;
+}
+
+}}

@@ -1,0 +1,16 @@
+@import 'themes';
+
+@import url('https://fonts.googleapis.com/css?family=Inter:regular,bold,italic&subset=latin,latin-ext');
+
+body {
+	margin: 0;
+	font-family: 'Inter';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@each $theme, $_ in $themes {  
+	body.#{$theme} { 
+		background-color: themed(bg-color, $theme);
+	} 
+}

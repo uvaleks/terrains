@@ -1,0 +1,95 @@
+@import '../../utils';
+@import '../../themes';
+
+ul, label
+{
+	font-size: inherit;
+}
+
+input[type="radio"] {
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+  }
+
+.radio-point {
+	display: none;
+}
+
+  input[type="radio"]:checked+label {
+	border-radius: 7px;
+	border-color: white;
+	border: 0.09em solid;
+	padding: 6px;
+  }
+
+.terrain-switch {
+	float: left;
+	margin-left: 4px;
+	margin-right: 4px;
+	cursor: pointer;
+	margin-top: 20px;
+	padding: 7px;
+}
+
+.terrain-switch:first-child {
+	margin-left: 20px;
+}
+
+li {
+	float: left;
+	margin-left: 11px;
+	margin-right: 11px;
+	cursor: pointer;
+}
+
+ul {
+	float: right;
+	list-style-type: none;
+	margin-top: 27px;
+	
+}
+
+@media (max-width: 911px) {
+	ul, label
+{
+	font-size: 11.5px;
+
+}}
+
+@media (max-width: 767px) {
+	ul, label
+	{
+		font-size: x-large;
+	}
+
+	li {
+		float: none;
+		margin: 0;
+		padding: 10px;
+	}
+
+	li:last-child {
+		float: none;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+
+	ul {
+		display: flex;
+    	flex-direction: column;
+    	align-items: center;
+		margin: 0px;
+		
+	}
+
+	input[type="radio"]:checked+label {
+		border: 0.09em solid;
+	  }
+
+	.terrain-switch {
+		float: none;
+		margin: 0px;
+	}
+}

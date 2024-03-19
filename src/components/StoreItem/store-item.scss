@@ -1,0 +1,322 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+.nft_store_card {
+    cursor: pointer;
+    background: none;
+    z-index: 1;
+    margin: 20px;
+    float: none;
+    border: none;
+    display: inline-block;
+    line-height: 1.5;
+    position: relative;
+    width: 300px;
+    height: 492px;
+    transition: all 0.2s ease-out;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+
+      &:hover > .nft_store_card_frontside.unturned {
+        transform: perspective(1000px) rotateY(0turn);
+        -webkit-transform: perspective(1000px) rotateY(0turn);
+      }
+
+    &:hover > .nft_store_card_backside.turned {
+    transform: perspective(1000px) rotateY(-0.5turn);
+    -webkit-transform: perspective(1000px) rotateY(-0.5turn);
+    }
+
+      &:hover > .nft_store_card_price_block {
+    }
+
+    .unturned {
+        transform: rotateY(0.5turn);
+        -webkit-transform: rotateY(0.5turn);
+    }
+
+    .turned {
+    transform: rotateY(0turn);
+    -webkit-transform: rotateY(0turn);
+    }
+
+.nft_store_card_frontside {
+    border-radius: 20px;
+    background-color: themed(card-bg-color, $theme);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(.5,1.3,.5,1.3), background-color 0.15s ease-out;
+    -webkit-transition: -webkit-transform 1s cubic-bezier(.5,1.3,.5,1.3), background-color 0.15s ease-out;
+}
+
+.shine {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    z-index: 3;
+    transition: background-position 0.2s ease-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+}
+
+
+.nft_store_card_link {
+    cursor: pointer;
+
+}
+
+
+.nft_store_card_pic_block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+}
+
+.nft_store_card_pic_fona {
+    
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.nft_store_card_pic_obj {
+    background: linear-gradient(180deg, themed(card-bg-color, $theme) 0%, themed(card-bg-color-zero, $theme) 20%, themed(card-bg-color-zero, $theme) 80%, themed(card-bg-color, $theme) 100%);
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    transition: all 0.15s ease-out;
+}
+
+.nft_store_card_pic_obj_shine {
+    position: absolute;
+    width: 300px;
+    -webkit-mask-size: contain;
+    z-index: 4;
+    transition: all 0.2s ease-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    mix-blend-mode: soft-light;
+}
+
+.nft_store_card_backside {
+    border-radius: 20px;
+    background-color: themed(card-bg-color, $theme);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(.5,1.3,.5,1.3), background-color 0.15s ease-out;
+    -webkit-transition: -webkit-transform 1s cubic-bezier(.5,1.3,.5,1.3), background-color 0.15s ease-out;
+}
+
+.nft_store_card_backside img {
+        margin: 113px auto;
+        width: 200px;
+        object-fit: cover;
+    }
+
+.nft_store_card_header {
+    z-index: 5;
+
+}
+
+.nft_store_card_diamond {
+    filter: themed(diamond-filter, $theme);
+    margin: 10px 0px 0px 12px;
+    width: 37px;
+    height: 40px;
+    color: themed(card-bg-color, $theme);
+    display: block;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.5pt;
+    line-height: 40px;
+    display: block;
+    float: left; 
+    background-size: contain; 
+    background-image: url(./diamond.png);
+    z-index: 5;
+    }
+
+    .nft_store_card_name {
+        z-index: 5;
+        color: themed(text, $theme);
+        font-weight: 400;
+        font-size: x-large;
+        margin: 12px 47px 0px 0px;
+        display: inline-block;
+    }
+
+.nft_store_card_collection {
+        z-index: 5;
+        color: rgb(142, 142, 147);
+        font-size: normal;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+}
+
+.nft_store_card_text_block {
+    z-index: 5;
+}
+
+.nft_store_card_series {
+    z-index: 5;
+        font-size: small;
+        color: rgb(142, 142, 147);
+        border-radius: 6px;
+        padding: 2px 6px;
+        top: -1px;
+        border: 0.09em solid;
+        border-color: rgb(142, 142, 147);
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin-left: 8px;
+        width: -webkit-fit-content;
+        width: fit-content;
+}
+
+.nft_store_card_no {
+    z-index: 5;
+    color: themed(text, $theme);
+    font-size: normal;
+}
+
+.hint_store_card_owner_all {
+    z-index: 5;
+    background: none;
+    transition: all 0.15s;
+    display: inline-block;
+}
+
+.hint_store_card_owner_all a {
+    z-index: 5;
+    display: inline-block;  
+    height: 40px;
+}
+
+.hint_store_card_owner_all:hover .hint_store_card_label_null {    
+    filter: themed(label-blue-filter, $theme);
+    transition: all 0.05s ease-out;
+}
+
+.hint_store_card_owner_all:hover .hint_store_card_label {
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+    transition: all 0.05s ease-out;
+}
+
+.hint_store_card_owner_all:hover .hint_store_card_owner {
+    color: themed(link-color, $theme);
+    transition: all 0.075s ease-out;
+}
+
+.nft_store_card_frontside:hover .nft_store_card_name {
+    color: themed(link-color, $theme);
+    transition: all 0.1s ease-out;
+}
+
+.hint_store_card_owned_by {
+    color: rgb(142, 142, 147);
+    z-index: 5;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 8px;
+}
+
+.hint_store_card_label_null {
+    z-index: 5;
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    display: inline-block;
+    background-size: contain; 
+    background-image: url(./hex-owner-96.png);
+    filter: themed(label-filter, $theme);
+    transition: all 0.1s ease-out;
+}
+
+.hint_store_card_label {
+    z-index: 5;
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    display: inline-block;
+    background-size: contain; 
+    border-radius: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.1s ease-out;
+}
+
+.hint_store_card_owner {
+    z-index: 5;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 8px;
+    color: themed(text, $theme);
+    font-size: normal;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.075s  ease-out;
+}
+
+
+
+
+.nft_store_card_body {
+    margin: 0px;
+}
+
+.upper {
+    -webkit-transform: translateX(0px);
+    transform: translateZ(25px);
+    -webkit-transform: translateZ(25px);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 1s cubic-bezier(.5,1.3,.5,1.3);
+    -webkit-transition: all 1s cubic-bezier(.5,1.3,.5,1.3);
+}
+
+.nft_store_card_price_block {
+    z-index: 5;
+    padding: 12px;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+
+}
+
+.nft_store_card_info {
+    display: flex;
+    justify-content: space-between;
+    word-break: keep-all;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: normal;
+    margin-top: 0px;
+    position: relative;
+    z-index: 5;
+}
+
+}
+
+}}

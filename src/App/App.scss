@@ -1,0 +1,17 @@
+@import '../utils';
+@import '../themes';
+
+@each $theme, $_ in $themes {  
+	.#{$theme}.app { 
+		height: 100%;
+		background-color: themed(bg-color, $theme);
+	} 
+}
+
+// @each $theme, $_ in $themes { .#{$theme} {
+
+// }}
+
+main {
+	@extend %div100w;
+}

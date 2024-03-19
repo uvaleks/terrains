@@ -1,0 +1,15 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+    #debug-container {
+        background-color: themed(bg-color, $theme);
+        color: themed(text, $theme);
+    }
+
+    .part_debug_container {
+        border: 1px solid white;
+        overflow: hidden;
+    }
+}}

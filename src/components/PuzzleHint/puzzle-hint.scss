@@ -1,0 +1,171 @@
+@import '../../themes';
+
+/* TOOLTIPS */
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+.hint {
+    display: flex;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-box-shadow: 0 7px 40px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 7px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 7px 40px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+    z-index: 2;
+    min-width: fit-content;
+    background-color: themed(transparent-color, $theme);
+    transition: opacity 0.3s, top 0.15s cubic-bezier(.5,1.3,.5,1.3);
+}
+
+.hint_image_fona {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -webkit-mask-image: url(./hint_mask.png);
+    -webkit-mask-size: cover;
+    mask-image: url(./hint_mask.png);
+    mask-size: cover;
+}
+
+.hint_image_obj {
+    -webkit-filter: themed(obj-shadow-small, $theme);
+    filter: themed(obj-shadow-small, $theme);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+}
+
+.hint_button_wrapper {
+    padding-top: 15px;
+}
+
+.hint_nft_name {
+    font-weight: 400;
+    font-size: x-large;
+    letter-spacing: -0.01em;
+    font-kerning: normal;
+    -webkit-font-kerning: normal;   
+    color: themed(text, $theme);
+    word-break: keep-all;
+    display: block;
+    text-align: center;
+    margin: 30px auto 17px;
+    cursor: default;
+}
+
+@media (max-width: 392px) {
+    .hint_nft_name {
+    font-size: 23px;
+    letter-spacing: -0.05em;
+    }
+}
+
+@media (max-width: 366px) {
+    .hint_nft_name {
+    font-size: 22px;
+    letter-spacing: -0.07em;
+    }
+}
+
+.hint_nft_owner {
+    font-size: normal;
+    color: themed(text, $theme);
+    padding-left: 8px;
+    z-index: 17;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,150px);
+    transition: all 0.075s ease-out;
+}
+
+.hint_nft_owner_all:hover .hint_nft_owner {
+    cursor: pointer;
+    color: themed(link-color, $theme);
+    transition: all 0.075s ease-out;
+
+}
+
+.hint_nft_owner_all:hover .hint_nft_owner_label_null {
+    filter: themed(label-blue-filter, $theme);
+    transition: all 0.05s ease-out;
+}
+
+.hint_nft_owner_all:hover .hint_nft_owner_label {
+    margin-top: -5px;
+    margin-left: 0px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    transition: all 0.05s ease-out;
+}
+
+.hint_nft_owner_all:hover .hint_nft_owner {
+    padding-left: 8px;
+    transition: all 0.05s ease-out;
+}
+
+.hint_nft_owner_label_null {
+    z-index: 5;
+    width: 22px;
+    height: 22px;
+    margin-top: -3px;
+    display: block;
+    float: left; 
+    background-size: contain; 
+    background-image: url(./hex-owner-96.png);
+    filter: themed(label-filter, $theme);
+    transition: all 0.05s ease-out;
+}
+
+.hint_nft_owner_label {
+    border-radius: 50%;
+    margin-top: -3px;
+    margin-left: 3px;
+    width: 22px;
+    height: 22px;
+    display: block;
+    float: left; 
+    background-size: contain; 
+    cursor: pointer;
+    transition: all 0.05s ease-out;
+}
+
+}}
+
+.hint_mobile_mixin .hint_info_conainer {
+    float: none;
+}
+
+.hint_image_conainer {
+    float: left;
+}
+
+.hint_info_conainer
+{
+    height: 180px;
+    min-width: 180px;
+    padding-left: 2px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+    cursor: default;
+    display: inline-block;
+    width: calc(100% - 180px);
+}
+
+.hint_nft_owner_all
+{
+    margin: 0 auto;
+    height: 15px;
+    display: inline-block;
+}
+

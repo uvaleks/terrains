@@ -1,0 +1,242 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+
+.notch-wrapper {
+    height: 70px;
+    display: inline-block;
+    width: inherit;
+}
+
+.logo-div-wrapper {
+    height: 70px;
+    display: unset;
+}
+
+.logo-text-wrapper {
+    height: 70px;
+    display: unset;
+}
+
+header {
+    font-size: 16px;
+    z-index: 3;
+    width: 100%;
+    max-width: 1024px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 70px;
+    position: fixed;
+    color: themed(text, $theme);
+    background-color: themed(notch-color, $theme);
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,150px);
+    backdrop-filter: blur(10px);
+    transition: -webkit-box-shadow 0.3s ease-out;
+    transition: -moz-box-shadow 0.3s ease-out;
+    transition: box-shadow 0.3s ease-out;
+}
+
+.scrolling {
+    -webkit-box-shadow: 0 7px 40px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 7px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 7px 40px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in;
+}
+
+.logo-div {
+    height: 36px;
+    width: 36px;
+    margin: 18px 7px 16px 22px; 
+    display: block;
+    float: left;   
+    background-size: contain; 
+    background-image: url(./logo-header.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.logo-text {
+    font-size: xx-large;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    font-kerning: normal;
+    -webkit-font-kerning: normal;   
+    margin: 16px 12px 23px 0px;
+    display: block;
+    float: left;    
+    cursor: pointer;
+    color: themed(text, $theme);
+}
+
+    .header-link-text {
+        color: themed(text, $theme);
+    }
+        
+    .header-burger {
+        cursor: pointer;
+        display: none;
+    }
+
+    @media (max-width: 1023px) {
+        header {
+            border-radius: 0;
+            font-size: 1.5vw;
+        }    
+    }
+
+    @media (max-width: 767px) {
+
+        .logo-div {
+            margin-left: 60px;
+            transition: all 0.15s ease-out;
+        }
+
+        .notch-wrapper {
+            text-align: center;
+            display: block;
+            transition: all 0.15s ease-out;
+        }
+
+        .logo-wrapper {
+            height: 70px;
+            width: fit-content;
+            display: inline-block;
+            transition: all 0.15s ease-out;
+        }
+
+        .logo-div-wrapper {
+            display: inline-block;
+        }
+        
+        .logo-text-wrapper {
+            display: inline-block;
+        }
+        
+        header {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+        }    
+
+        .header-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .whole-menu {
+            z-index: 2;
+            position: absolute;
+            left:0;
+            right:0;
+            margin: 8px auto;
+            top: -550%;
+            height: auto;
+            width: fit-content;
+            float: none;
+            font-size: x-large;
+            padding: 20px;
+            padding-bottom: 13px;
+            border-radius: 20px;
+            background-color: themed(transparent-color, $theme);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            -webkit-box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.04),
+            0px 41.7776px 33.4221px rgba(0, 0, 0, 0.02),
+            0px 22.3363px 17.869px rgba(0, 0, 0, 0.02),
+            0px 12.5216px 10.0172px rgba(0, 0, 0, 0.02),
+            0px 6.6501px 5.32008px rgba(0, 0, 0, 0.02),
+            0px 2.76726px 2.21381px rgba(0, 0, 0, 0.02);
+            -moz-box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.04),
+            0px 41.7776px 33.4221px rgba(0, 0, 0, 0.02),
+            0px 22.3363px 17.869px rgba(0, 0, 0, 0.02),
+            0px 12.5216px 10.0172px rgba(0, 0, 0, 0.02),
+            0px 6.6501px 5.32008px rgba(0, 0, 0, 0.02),
+            0px 2.76726px 2.21381px rgba(0, 0, 0, 0.02);
+            box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.04),
+            0px 41.7776px 33.4221px rgba(0, 0, 0, 0.02),
+            0px 22.3363px 17.869px rgba(0, 0, 0, 0.02),
+            0px 12.5216px 10.0172px rgba(0, 0, 0, 0.02),
+            0px 6.6501px 5.32008px rgba(0, 0, 0, 0.02),
+            0px 2.76726px 2.21381px rgba(0, 0, 0, 0.02);
+            transition: background-color 0.15s ease-out;
+            transition: top 0.15s ease-out;
+    }
+
+        .header-burger {
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 20px;
+            float: right;
+            margin-top: 25px;
+            margin-right: 20px;
+        }
+    
+        .header-burger span {
+            position: absolute;
+            background-color: themed(text, $theme);
+            left: 0;
+            top: 9px;
+            width: 100%;
+            height: 2px;
+            border-radius: 1px;
+            transition: all 0.15s ease-out;
+        }
+    
+        .header-burger:before,
+        .header-burger:after {
+            content: '';
+            background-color: themed(text, $theme);
+            width: 100%;
+            height: 2px;
+            left: 0;
+            position: absolute;
+            border-radius: 1px;
+            transition: all 0.15s ease-out;
+        }
+        .header-burger:before
+        {
+            top: 0;
+        }
+        .header-burger:after
+        {
+            bottom: 0;
+        }
+        .header-burger.active:before {
+            transform: rotate(45deg);
+            top: 9px;
+            transition: all 0.15s ease-out;
+        }
+        .header-burger.active:after {
+            transform: rotate(-45deg);
+            bottom: 9px;
+            transition: all 0.15s ease-out;
+        }
+        .header-burger.active span {
+            transform: scale(0);
+            transition: all 0.15s ease-out;
+        }
+        .whole-menu.active {
+        z-index: -1;
+        transition: top 0.15s ease-out;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        margin: 8px auto;
+        top: 70px;
+        }   
+    }
+}}
+
+.whole-menu {
+    display: block;
+    margin-right: 22px;
+    margin-left: 22px;
+    height: 70px;
+}

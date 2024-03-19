@@ -1,0 +1,114 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+  .switch-label {
+    background: themed(switcher-bg, $theme);
+    overflow: hidden;
+  }
+  .switch-button {
+    background: themed(switcher-point-bg, $theme);
+    box-shadow: 0 3px 10px 0 rgba(10, 10, 10, 0.25);
+    transition: left 0.15s ease-in;
+  }
+
+  .switch-checkbox:checked + .switch-label {
+    background: themed(blue, $theme);
+    transition: left 0.15s ease-in;
+  }
+
+  .switch-checkbox:checked + .switch-button {
+    background: #fff;
+    transition: background-color 0.15s ease-in;
+  }
+}}
+
+.switch-container {
+    float: right;
+    display: flex;
+    margin-left: 11px;
+    }  
+
+.switch-text {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    padding-right: 6px;
+    cursor: default;
+}
+
+.switch-checkbox {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    }
+  
+  .switch-label {
+    top: -3px;
+    display: flex;
+    flex-direction: row;
+    float: left;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 32px;
+    height: 20px;
+    border-radius: 25px;
+    position: relative;
+  }
+  
+  .switch-label .switch-button {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 21px;
+    transition: left 0.15s ease-in;
+    
+  }
+  
+  .switch-checkbox:checked + .switch-label .switch-button {
+    left: calc(50% - 2px);
+    transition: left 0.15s ease-in;
+  }
+
+  @media (max-width: 767px) {
+
+    .switch-container {
+      float: left;
+      display: block;
+      padding: 0;
+      float: left;
+      display: block;
+      height: auto;
+      margin: 0px;
+      }  
+      .switch-text {
+        display: flex;
+        flex-direction: row;
+        float: left;
+        padding: 10px;
+        padding-left: 0px;
+    }
+
+    .switch-text:last-child {
+      margin-bottom: 0;
+  }
+
+    .switch-label {
+      margin: 10px 0 0;
+      width: 52px;
+      height: 30px;
+      float: right
+    }
+
+    .switch-label .switch-button {
+      width: 26px;
+      height: 26px;
+    }
+  }

@@ -1,0 +1,43 @@
+@import '../../utils';
+@import '../../themes';
+
+@each $theme, $_ in $themes { .#{$theme} {
+.coming_soon_div {
+    color: themed(bg-color, $theme);
+    position: absolute;
+    margin: auto;
+    top: 15%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 34%;
+    text-align: center;
+    font-size: 130px;
+    font-weight:100;
+
+}
+
+.hexdots-caption {
+    position: relative;
+    display: block;
+    z-index: 0;
+    margin: 0 auto;
+    top: 55vh;
+    width: fit-content;
+    font-size: xx-large;
+    color: themed(gray-text, $theme);
+}
+
+ }}
+.desert_blurred
+{
+    transition: 0.5s ease-out;
+}
+
+.seaside_blurred
+{
+    transition: 0.5s ease-out;
+}
+
+
+
