@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/terrains/static/css/main.15addb56.css",
+    "main.js": "/terrains/static/js/main.0df59a40.js",
+    "static/js/453.93aadd3a.chunk.js": "/terrains/static/js/453.93aadd3a.chunk.js",
+    "static/media/desert_blurred.png": "/terrains/static/media/desert_blurred.aa446a4749cfc48c7fde.png",
+    "static/media/desert.gif": "/terrains/static/media/desert.4b9879f9f9c29112d710.gif",
+    "static/media/seaside_blurred.png": "/terrains/static/media/seaside_blurred.397d277a53cc5bd85139.png",
+    "static/media/no-war.png": "/terrains/static/media/no-war.099a31b3fed125429961.png",
+    "static/media/nft-logo.png": "/terrains/static/media/nft-logo.00285c2bbd12d505df4c.png",
+    "static/media/hint_mask.png": "/terrains/static/media/hint_mask.1e81234f8fd365b4a74e.png",
+    "static/media/metamask-logo.png": "/terrains/static/media/metamask-logo.bedeea7543a70284b972.png",
+    "static/media/opensea-logo.png": "/terrains/static/media/opensea-logo.5012199bd10986da85c0.png",
+    "static/media/logo300.png": "/terrains/static/media/logo300.b3260902e7292176ffca.png",
+    "static/media/climate-positive.png": "/terrains/static/media/climate-positive.99636a6af7fb973aed12.png",
+    "index.html": "/terrains/index.html",
+    "main.15addb56.css.map": "/terrains/static/css/main.15addb56.css.map",
+    "main.0df59a40.js.map": "/terrains/static/js/main.0df59a40.js.map",
+    "453.93aadd3a.chunk.js.map": "/terrains/static/js/453.93aadd3a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15addb56.css",
+    "static/js/main.0df59a40.js"
+  ]
+}
